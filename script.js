@@ -226,7 +226,7 @@ function drawResults(sel, scenarios, name, complete, incomplete){
     recordSel.appendMany('circle.scenario', ƒ())
         .at({r: 5, fill: ƒ('team', color[colorChoice]), cx: function(d, i){ return i*10} })
         .call(d3.attachTooltip)
-        .on('mouseout', function(){ gSel.selectAll('circle.scenario').classed('active', false).at('r', 5) })
+        .on('mouseout', function(){gSel.selectAll('circle.scenario').classed('active', false).at('r', 5) })
         .on('mouseover', function(d){
         gSel.selectAll('circle.scenario')
             .classed('active', 0)
@@ -260,7 +260,7 @@ function drawResults(sel, scenarios, name, complete, incomplete){
         .each(function(d){
             d3.select(this)
                 .text('')                        //clear existing text
-                .tspans(d3.wordwrap(d.text, d.lw || 20)) //wrap after 20 char
+                .tspans(d3.wordwrap(d.text, d.lw || 5)) //wrap after 20 char
         })  
 
 }

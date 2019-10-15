@@ -24,13 +24,20 @@ html {
 h1{
 	text-align: center;
 }
-
-
+ 
 div.matches{
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -khtml-user-select: none; 
+    -ms-user-select: none;
+} 
+
+.annotations{
+	pointer-events: all;
+}
+/* TAKE THIS OUT*/
+div.team{
+	pointer-events: all;
 }
 
 .group{
@@ -82,8 +89,14 @@ div.tooltip {
     border: 1px solid lightgray;
     pointer-events: none;
     font-family: monospace;
-    width: 200px;
+	width: 200px;
+	
 
+}
+.tooltip > .game{
+	display: inline-block;
+	width: 100px;
+	height: 25px;
 }
 .tooltip-hidden{
     opacity: 0;
@@ -282,5 +295,10 @@ strong{
     }
     .header{
         color: #aaa;
+	}
+	.scenario.active{
+		stroke: #aaa;
+		stroke-width: 3;
+
 	}
 }
