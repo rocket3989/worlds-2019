@@ -4,7 +4,7 @@ var byGroup
 var colorChoice = 0
 var ƒ = d3.f
 // console.clear()
-d3.loadData('annotations.json', 'matches2.tsv', function(err, res){
+d3.loadData('annotations.json', 'matches.tsv', function(err, res){
     d3.selectAll('.group-header').st({opacity: 1})
 
     annotations = res[0]
