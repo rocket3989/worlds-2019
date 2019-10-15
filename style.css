@@ -1,0 +1,398 @@
+
+
+svg{
+    font-family: monospace;
+    overflow: visible;
+    font-size: 14px;
+}
+
+svg text{
+    /*-webkit-text-stroke: 4px navy;*/
+    -webkit-text-shadow: 0 1px 0 #F5F5F5, 1px 0 0 #F5F5F5, 0 -1px 0 #F5F5F5, -1px 0 0 #F5F5F5;
+    text-shadow: 0 1px 0 #F5F5F5, 1px 0 0 #F5F5F5, 0 -1px 0 #F5F5F5, -1px 0 0 #F5F5F5;
+
+}
+
+html {
+    min-width: 760px;
+    background-color: #F5F5F5;
+    font-weight: normal;
+    margin: auto 0px ;
+    
+
+}
+div.matches{
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.group{
+    margin: 0px auto;
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.group-header{
+    text-align: center;
+    margin-bottom: -0px;
+    margin-top: 80px;
+    opacity: 0;
+}
+
+.team{
+    display: inline-block;
+    width: 315px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+.active{
+    stroke: black;
+    stroke-width: 4;
+}
+
+.hidden{
+    opacity: .2;
+}
+
+
+div.tooltip {
+    top: -1000px;
+    position: fixed;
+    padding: 10px;
+    background: rgba(255, 255, 255, .90);
+    border: 1px solid lightgray;
+    pointer-events: none;
+    font-family: monospace;
+    width: 200px;
+
+}
+.tooltip-hidden{
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .1s;
+}
+
+
+.game .won{
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.matches{
+    font-size: 16px;
+    text-align: center;
+}
+
+.matches .game{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-right: 10px;
+    opacity: .6;
+    font-family: monospace;
+}
+.matches .game.active{
+    opacity: 1;
+}
+.matches .game span{
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.annotations path{
+    fill: none;
+    stroke: #eee;
+    stroke-width: .6px;
+}
+.annotations text{
+    font-size: 12px;
+}
+html{
+	background-color: #f5f5f5;
+	font-weight: normal;
+}
+
+body{
+	max-width: 750px;
+	margin: 0px auto;
+	font-family: 'Roboto Slab', serif;
+	line-height: 1.55em;
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 80px;
+}
+
+@media (max-width: 760px){
+	body{
+        padding: 5px;
+        margin: 0px 8px;
+	}
+}
+
+p{
+	line-height: 1.55em;
+}
+
+a{
+	color: black;
+}
+
+.header{
+  position: relative;
+  color: black;
+  font-size: 16px;
+  height: 24px;
+  overflow: visible;
+  /*font-family: Consolas, monaco, 'Lucida Console', monospace; */
+  /*font-family: 'Roboto', serif;*/
+  font-family: 'Roboto Slab', serif;
+}
+.header-left{
+	float: left;
+}
+.header-right{
+	float: right;
+}
+.header span{
+	opacity: .5;
+}
+@media (max-width: 760px){
+  .header-right span{
+    opacity: 0;
+  }
+}
+.header a{
+	opacity: .5;
+	text-decoration: none;
+}
+.header a:hover{
+	opacity: 1
+}
+.header img{
+	width: 16px;
+  margin-right: 2px;
+	position: relative;
+	top: 2px;
+}
+
+
+h1,h2,h3,h4,h5{
+	font-family: 'Roboto', sans-serif;
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+}
+h1{
+	font-weight: 500;
+	font-size: 34px;
+	margin-bottom: 1.2em;
+  line-height: 1.3em;
+  margin-top: 1.2em;
+}
+h2,h3,h4,h5{
+	font-size: 22px;
+}
+
+:not(pre) > code{
+	background: #dedede;
+	padding: .05em;
+	padding-left: .2em;
+	padding-right: .2em;
+	border-radius: 2px;
+  font-family: monospace; 
+}
+
+strong{
+	font-weight: bold;
+}
+
+
+img.aligncenter {
+  display: block;
+  margin: auto;
+  max-width: 750px;
+}
+
+pre > code {
+  display: block;
+  overflow-x: visable;
+  color: #333;
+  -webkit-text-size-adjust: none;
+  border-left: 2px solid #ccc;
+  padding-left: 18px;
+  margin-left: -18px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.hljs-comment,
+.diff .hljs-header {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+  color: #008080;
+}
+
+.hljs-regexp {
+  color: #009926;
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+  color: #990073;
+}
+
+.hljs-built_in {
+  color: #0086b3;
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.diff .hljs-change {
+  background: #0086b3;
+}
+
+.hljs-chunk {
+  color: #aaa;
+}
+
+@media (prefers-color-scheme: light) {
+    .annotations path {
+        fill: none;
+        stroke: #000;
+        stroke-width: .6px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html{
+        background-color: #222;
+        color: #aaa
+    }
+    svg text{
+        /*-webkit-text-stroke: 4px navy;*/
+        -webkit-text-shadow: 0 1px 0 #222, 1px 0 0 #222, 0 -1px 0 #222, -1px 0 0 #222;
+        text-shadow: 0 1px 0 #222, 1px 0 0 #222, 0 -1px 0 #222, -1px 0 0 #222;
+        color: #aaa
+    
+    }
+    text{
+        color: #aaa;
+        fill: #aaa;
+    }
+    ​path {
+        stroke: #aaa;
+    }​
+    .annotations path {
+        fill: none;
+        stroke: #aaa;
+        stroke-width: 20px;
+    }
+    marker {
+        stroke: #aaa;
+        fill: #aaa
+    }
+    a{
+        color: #aaa;
+        stroke: #aaa;
+        fill: #aaa
+    }
+    body{
+        color: #aaa;
+    }
+    
+    div.tooltip {
+        background:#222e;
+    }
+    .matches .game{
+        border: 1px solid #aaa;
+    }
+    .header{
+        color: #aaa;
+      }
+}
