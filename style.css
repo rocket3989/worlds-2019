@@ -7,7 +7,6 @@ svg{
 }
 
 svg text{
-    /*-webkit-text-stroke: 4px navy;*/
     -webkit-text-shadow: 0 1px 0 #F5F5F5, 1px 0 0 #F5F5F5, 0 -1px 0 #F5F5F5, -1px 0 0 #F5F5F5;
     text-shadow: 0 1px 0 #F5F5F5, 1px 0 0 #F5F5F5, 0 -1px 0 #F5F5F5, -1px 0 0 #F5F5F5;
 
@@ -21,6 +20,12 @@ html {
     
 
 }
+
+h1{
+	text-align: center;
+}
+
+
 div.matches{
     -webkit-user-select: none; /* webkit (safari, chrome) browsers */
     -moz-user-select: none; /* mozilla browsers */
@@ -52,9 +57,9 @@ sub {
 
 .team{
     display: inline-block;
-    width: 315px;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
     position: relative;
     z-index: 0;
 }
@@ -97,7 +102,8 @@ div.tooltip {
 
 .matches{
     font-size: 16px;
-    text-align: center;
+	text-align: center;
+	margin-left: 0px;
 }
 
 .matches .game{
@@ -112,11 +118,6 @@ div.tooltip {
 }
 .matches .game.active{
     opacity: 1;
-}
-.matches .game span{
-    pointer-events: none;
-    -webkit-user-select: none;
-    user-select: none;
 }
 
 .annotations path{
@@ -142,10 +143,16 @@ body{
 	margin-bottom: 80px;
 }
 
-@media (max-width: 760px){
+@media(max-width: 760px){
 	body{
         padding: 5px;
         margin: 0px 8px;
+	}
+	p{
+		text-align: center;
+	}
+	.matches{
+		margin-left: 20px;
 	}
 }
 
@@ -176,11 +183,7 @@ a{
 .header span{
 	opacity: .5;
 }
-@media (max-width: 760px){
-  .header-right span{
-    opacity: 0;
-  }
-}
+
 .header a{
 	opacity: .5;
 	text-decoration: none;
@@ -190,7 +193,7 @@ a{
 }
 .header img{
 	width: 16px;
-  margin-right: 2px;
+  	margin-right: 2px;
 	position: relative;
 	top: 2px;
 }
@@ -205,8 +208,8 @@ h1{
 	font-weight: 500;
 	font-size: 34px;
 	margin-bottom: 1.2em;
-  line-height: 1.3em;
-  margin-top: 1.2em;
+	line-height: 1.3em;
+	margin-top: 1.2em;
 }
 h2,h3,h4,h5{
 	font-size: 22px;
@@ -218,7 +221,7 @@ h2,h3,h4,h5{
 	padding-left: .2em;
 	padding-right: .2em;
 	border-radius: 2px;
-  font-family: monospace; 
+  	font-family: monospace; 
 }
 
 strong{
@@ -279,5 +282,5 @@ strong{
     }
     .header{
         color: #aaa;
-      }
+	}
 }

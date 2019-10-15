@@ -32,7 +32,7 @@
   {
     "path": "M 265,227 A 49.476 49.476 0 0 1 170,228",
     "text": "RNG still gets a tiebreaker if they lose 3",
-    "team": "RNG",
+    "team": "FW",
     "lw": 15,
     "textOffset": [
       269,
@@ -42,7 +42,7 @@
   {
     "path": "M 249,11 A 36.581 36.581 0 0 1 177,10.99999713897705",
     "text": "A 3-0  finish doesn't guarantee advancement for 100",
-    "team": "100",
+    "team": "FW",
     "lw": 24,
     "textOffset": [
       222,
@@ -52,7 +52,7 @@
   {
     "path": "M 315,21 A 80.989 80.989 0 0 1 179,88",
     "text": "TL could be eliminated even if they beat EDG and KT",
-    "team": "TL",
+    "team": "FW",
     "lw": 24,
     "textOffset": [
       259,
