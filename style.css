@@ -1,4 +1,29 @@
+button {
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    margin: 0px 5px;
+    background: rgb(218, 218, 218);
+    color: #000000;
+    font-family: sans-serif;
+    font-size: .9rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
 
+button:hover,
+button:focus {
+    background: rgb(194, 194, 194);
+}
+
+
+button:active {
+    transform: scale(0.99);
+}
 
 svg{
     font-family: monospace;
@@ -35,10 +60,7 @@ div.matches{
 .annotations{
 	pointer-events: all;
 }
-/* TAKE THIS OUT*/
-div.team{
-	pointer-events: all;
-}
+
 
 .group{
     margin: 0px auto;
@@ -160,9 +182,6 @@ body{
 	body{
         padding: 5px;
         margin: 0px 8px;
-	}
-	p{
-		text-align: center;
 	}
 	.matches{
 		margin-left: 20px;

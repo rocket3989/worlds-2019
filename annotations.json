@@ -20,33 +20,70 @@
     ]
   },
   {
-    "path": "M -1000 0",
-    "text": "Two wins get JT or FPX out of groups",
+    "path": "M -2000 0",
+    "text": "Two wins advance JT or FPX out of groups",
     "team": "FPX",
     "lw": 22,
     "textOffset": [
-      -103,
-      -11
+      -107,
+	   12
     ]
   },
   {
-    "path": "M -1000 0",
+    "path": "M -2000 0",
     "text": "Two loses knock GAM and SPY out",
     "team": "SPY",
     "lw": 22,
     "textOffset": [
-      -103,
-      -11
+      -107,
+      12
     ]
   },
   {
-    "path": "M 315,21 A 80.989 80.989 0 0 1 179,88",
-    "text": "TL could be eliminated even if they beat EDG and KT",
+    "path": "M 261,-64 A 62.002 62.002 0 0 1 182,4",
+    "text": "Even with three wins, CG can still be eliminated",
+    "team": "CG",
+    "lw": 24,
+    "textOffset": [
+		183,
+		-88
+    ]
+  },
+  {
+    "path": "M 261,-64 A 62.002 62.002 0 0 1 182,4",
+    "text": "AHQ needs to go 3-0  and win a tiebreaker to advance",
+    "team": "AHQ",
+    "lw": 24,
+    "textOffset": [
+		183,
+		-88
+    ]
+  },
+  {
+    "path": "M 286,220 A 123.355 123.355 0 0 1 105,221",
+    "text": "G2 can lose all three games and still advance without a tiebreaker",
+    "team": "G2",
+    "lw": 24,
+    "textOffset": [
+		241, 185
+    ]
+  },
+  {
+    "path": "M -26,-55 A 179.253 179.253 0 0 0 -6,62",
+    "text": "CG has a slim chance of getting a tiebreaker without beating SKT",
+    "team": "CG",
+    "lw": 24,
+    "textOffset": [
+		-92,-90
+    ]
+  },
+  {
+    "path": "M -2000",
+    "text": "With each of the top three teams holding a win over another, Group D is poised to have an exciting finish",
     "team": "TL",
     "lw": 24,
     "textOffset": [
-      259,
-      -7
+		234,-137
     ]
   }
 ]
