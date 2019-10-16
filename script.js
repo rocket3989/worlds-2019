@@ -34,8 +34,8 @@ function changeColor(){
 }
 
 function changeSeed(){
-	colorChoice ^= 2;
-	reDraw();
+    colorChoice ^= 2;
+    reDraw();
 }
 
 function reDraw(){
@@ -75,38 +75,38 @@ function scoreMatches(matches){
     })
 
 
-	var advanceSlots = 2
-	
+    var advanceSlots = 2
+    
     d3.nestBy(teams, function(d){ return d.w + d.wins*10 })
         .sort(d3.descendingKey('key'))
         .forEach(function(d){
         if (d.length <= advanceSlots){
-			d.forEach(function(d){ d.advance = 't'})
-			if(advanceSlots == 2){
-				if(d.length == 2){ //check for tied first place
-					against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
-														   || match.allTeams == d[1].name + '-' + d[0].name})
-					if(against[0].actualWinner == against[1].actualWinner){
-						d.forEach(function(d){ if (d.name == against[0].wName) d.advance = 'u'})
-					}
-				}
-				else
-					d.forEach(function(d){ d.advance = 'u'})
-			}
+            d.forEach(function(d){ d.advance = 't'})
+            if(advanceSlots == 2){
+                if(d.length == 2){ //check for tied first place
+                    against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
+                                                           || match.allTeams == d[1].name + '-' + d[0].name})
+                    if(against[0].actualWinner == against[1].actualWinner){
+                        d.forEach(function(d){ if (d.name == against[0].wName) d.advance = 'u'})
+                    }
+                }
+                else
+                    d.forEach(function(d){ d.advance = 'u'})
+            }
         } else if (advanceSlots > 0){
             d.forEach(function(d){ d.advance = 'm'})
         } else{
-			d.forEach(function(d){ d.advance = 'f' })
-			if(d.length == 2){ //check for tied last place
-				against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
-													   || match.allTeams == d[1].name + '-' + d[0].name})
-				if(against[0].actualWinner == against[1].actualWinner){
-					d.forEach(function(d){ if (d.name == against[0].wName) d.advance = 'e'})
-				}
-			}
-			if(advanceSlots == - 1){
-				d[0].advance = 'e'
-			}
+            d.forEach(function(d){ d.advance = 'f' })
+            if(d.length == 2){ //check for tied last place
+                against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
+                                                       || match.allTeams == d[1].name + '-' + d[0].name})
+                if(against[0].actualWinner == against[1].actualWinner){
+                    d.forEach(function(d){ if (d.name == against[0].wName) d.advance = 'e'})
+                }
+            }
+            if(advanceSlots == - 1){
+                d[0].advance = 'e'
+            }
         }
         advanceSlots -= d.length
         })
@@ -248,8 +248,8 @@ function drawResults(sel, scenarios, name, complete, incomplete){
         if (d.key == '110') s = against[2] 
         return s
         })
-		.at({textAnchor: 'middle', x: 10*3.5, y: -10})
-	
+        .at({textAnchor: 'middle', x: 10*3.5, y: -10})
+    
     recordSel.appendMany('circle.scenario', ƒ())
         .at({r: 5, fill: ƒ('team', color[colorChoice]), cx: function(d, i){return i*10} })
         .call(d3.attachTooltip)
@@ -274,14 +274,14 @@ function drawResults(sel, scenarios, name, complete, incomplete){
             return d.map(ƒ('name')).join(' and ') + {u:' first seed',t: ' advance', m: ' tie', f: (d.length > 1 ? ' are' : ' is') + ' eliminated', e:' last place'}[d.key]
             })
         })
-		.on('click', function(d){
-			d3.selectAll('.matches > .game').each(function(e, i){
-				if (e.group == d.incomplete[0].group){
-					e.clicked = parseInt(d.str[i % 6]) - 1
-					d3.select(this).dispatch("click")
-				}
-			})
-		})
+        .on('click', function(d){
+            d3.selectAll('.matches > .game').each(function(e, i){
+                if (e.group == d.incomplete[0].group){
+                    e.clicked = parseInt(d.str[i % 6]) - 1
+                    d3.select(this).dispatch("click")
+                }
+            })
+        })
 
     var swoopy = d3.swoopyDrag()
         .draggable(0)
@@ -300,10 +300,10 @@ function drawResults(sel, scenarios, name, complete, incomplete){
 
 }
 
-
+    
 color = [ function color(d){ return {u:'#4CAF50',t: '#4CAF50', m: '#FF9800', f: '#f73434', e: '#f73434'}[d.advance] },
-		  function color(d){ return {u:'#2c7bb6',t: '#2c7bb6', m: '#dfaf90', f: '#f73434', e: '#f73434'}[d.advance] },
-	 	  function color(d){ return {u:'#36e03d',t: '#4CAF50', m: '#FF9800', f: '#f73434', e: '#b80f02'}[d.advance] },
+          function color(d){ return {u:'#2c7bb6',t: '#2c7bb6', m: '#dfaf90', f: '#f73434', e: '#f73434'}[d.advance] },
+           function color(d){ return {u:'#36e03d',t: '#4CAF50', m: '#FF9800', f: '#f73434', e: '#b80f02'}[d.advance] },
           function color(d){ return {u:'#5aa4db',t: '#2c7bb6', m: '#dfaf90', f: '#f73434', e: '#b80f02'}[d.advance] }]
 
 d3.select('html').selectAppend('div.tooltip').classed('tooltip-hidden', 1)
