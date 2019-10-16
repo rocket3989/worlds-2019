@@ -155,11 +155,7 @@ div.tooltip {
     opacity: 1;
 }
 
-.annotations path{
-    fill: none;
-    stroke: #eee;
-    stroke-width: .6px;
-}
+
 .annotations text{
     font-size: 12px;
 }
@@ -260,13 +256,10 @@ strong{
 	font-weight: bold;
 }
 
-
-@media (prefers-color-scheme: light) {
-    .annotations path {
-        fill: none;
-        stroke: #000;
-        stroke-width: .6px;
-    }
+.annotations path{
+    fill: none;
+    stroke: #000;
+    stroke-width: .6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -291,7 +284,6 @@ strong{
     .annotations path {
         fill: none;
         stroke: #aaa;
-        stroke-width: 20px;
     }
     marker {
         stroke: #aaa;
