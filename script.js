@@ -101,7 +101,7 @@ function scoreMatches(matches){
                 against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
                                                        || match.allTeams == d[1].name + '-' + d[0].name})
                 if(against[0].actualWinner == against[1].actualWinner){
-                    d.forEach(function(d){ if (d.name == against[0].wName) d.advance = 'e'})
+                    d.forEach(function(d){ if (d.name == against[0].actualWinner) d.advance = 'e'})
                 }
             }
             if(advanceSlots == - 1){
