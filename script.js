@@ -20,7 +20,7 @@ d3.loadData('annotations.json', 'matches.tsv', function(err, res){
         d.wName = d['t' + d.winner]
         if (!teams2wins[d.t1]) teams2wins[d.t1] = 0
         if (!teams2wins[d.t2]) teams2wins[d.t2] = 0
-        if (d.date < "10-17") teams2wins[d.wName]++
+        if (d.date < "10-17") teams2wins[d.wName]++     //make sure to change key each year
     })
 
     byGroup = d3.nestBy(matches, ƒ('group'))
