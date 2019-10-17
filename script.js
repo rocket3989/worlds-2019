@@ -18,10 +18,9 @@ d3.loadData('annotations.json', 'matches.tsv', function(err, res){
         d.complete = i < 24
         d.allTeams = d.t1 + '-' + d.t2
         d.wName = d['t' + d.winner]
-
         if (!teams2wins[d.t1]) teams2wins[d.t1] = 0
         if (!teams2wins[d.t2]) teams2wins[d.t2] = 0
-        teams2wins[d.wName]++
+        if (d.date < "10-17") teams2wins[d.wName]++
     })
 
     byGroup = d3.nestBy(matches, ƒ('group'))
@@ -122,7 +121,6 @@ function drawGroup(gMatches){
     
     var complete = gMatches.filter(d => d.complete)
     var incomplete = gMatches.filter(function(d){ return !d.complete })
-
     scenarios = d3.range(64).map(function(i){
         incomplete.forEach(function(d, j){
         d.winner = (i >> j) % 2 ? 1 : 2 

@@ -22,7 +22,7 @@
   {
     "path": "M -2000 0",
     "text": "Two wins advance JT or FPX out of groups",
-    "team": "JT",
+    "team": "FPX",
     "lw": 22,
     "textOffset": [
       -107,
@@ -32,7 +32,7 @@
   {
     "path": "M -2000 0",
     "text": "Two loses knock GAM and SPY out",
-    "team": "GAM",
+    "team": "SPY",
     "lw": 22,
     "textOffset": [
       -107,
