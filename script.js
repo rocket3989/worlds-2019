@@ -274,24 +274,25 @@ function drawResults(sel, scenarios, name, complete, incomplete){
             return d.map(ƒ('name')).join(' and ') + {u:' first seed',t: ' advance', m: ' tie', f: (d.length > 1 ? ' are' : ' is') + ' eliminated', e:' last place'}[d.key]
             })
         })
+        
         .on('click', function(d){
-			current = []
-			blank = true
-			d3.selectAll('.matches > .game').each(function(e, i){
-                if (e.group == d.incomplete[0].group){
-					current.push(e.clicked) 
-					if (e.clicked != 0) blank = false
-                }
-            })
-			reset = !d3.select(this).classed('hidden') && !blank
+            current = []
+            blank = true
             d3.selectAll('.matches > .game').each(function(e, i){
                 if (e.group == d.incomplete[0].group){
-					if(reset) e.clicked = -1
-					else if(blank)
-						e.clicked = parseInt(d.str[i % 6]) - 1
-					else if(parseInt(d.str[i % 6]) != current[i % 6])
-						e.clicked = -1
-					else e.clicked--
+                    current.push(e.clicked) 
+                    if (e.clicked != 0) blank = false
+                }
+            })
+            reset = !d3.select(this).classed('hidden') && !blank
+            d3.selectAll('.matches > .game').each(function(e, i){
+                if (e.group == d.incomplete[0].group){
+                    if(reset) e.clicked = -1
+                    else if(blank)
+                        e.clicked = parseInt(d.str[i % 6]) - 1
+                    else if(parseInt(d.str[i % 6]) != current[i % 6])
+                        e.clicked = -1
+                    else e.clicked--
                     d3.select(this).dispatch("click")
                 }
             })
