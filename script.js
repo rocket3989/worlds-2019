@@ -284,7 +284,6 @@ function drawResults(sel, scenarios, name, complete, incomplete){
                 }
             })
 			reset = !d3.select(this).classed('hidden') && !blank
-			console.log(current, d.str, blank)
             d3.selectAll('.matches > .game').each(function(e, i){
                 if (e.group == d.incomplete[0].group){
 					if(reset) e.clicked = -1
