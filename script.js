@@ -2,30 +2,41 @@
 // https://esports-assets.s3.amazonaws.com/production/files/rules/2017-MSI-Ruleset.pdf
 var byGroup
 var colorChoice = 0
+var staticPick = false;
 var ƒ = d3.f
 // console.clear()
-d3.loadData('annotations.json', 'matches.tsv', function(err, res){
-    d3.selectAll('.group-header').st({opacity: 1})
-
-    annotations = res[0]
-    matches = res[1]
-
-    teams2wins = {}
-
-    matches.forEach(function(d, i){
-        d.winner = +d.winner
-        d.actualWinner = !(d.winner === 0) ? d.winner : 3
-        d.complete = i < 24
-        d.allTeams = d.t1 + '-' + d.t2
-        d.wName = d['t' + d.winner]
-        if (!teams2wins[d.t1]) teams2wins[d.t1] = 0
-        if (!teams2wins[d.t2]) teams2wins[d.t2] = 0
-        if (d.date < "10-17") teams2wins[d.wName]++     //make sure to change key each year
+function readFile(){
+    d3.loadData('annotations.json', 'matches.tsv', function(err, res){
+        d3.selectAll('.group-header').st({opacity: 1})
+    
+        annotations = res[0]
+        matches = res[1]
+    
+        teams2wins = {}
+    
+        matches.forEach(function(d, i){
+            d.winner = +d.winner
+            if( i < 24 || !staticPick){
+                d.wName = d['t' + d.winner]
+                d.actualWinner = !(d.winner === 0) ? d.winner : 3
+            }
+            d.complete = i < 24
+            d.allTeams = d.t1 + '-' + d.t2
+            if (!teams2wins[d.t1]) teams2wins[d.t1] = 0
+            if (!teams2wins[d.t2]) teams2wins[d.t2] = 0
+            if (d.date < "10-17") teams2wins[d.wName]++     //make sure to change key each year
+        })
+    
+        byGroup = d3.nestBy(matches, ƒ('group'))
+        reDraw();
     })
+}
+readFile()
 
-    byGroup = d3.nestBy(matches, ƒ('group'))
-    reDraw();
-})
+function static(){
+    staticPick = !staticPick
+    readFile();
+}
 
 function changeColor(){
     colorChoice ^= 1;
@@ -100,7 +111,7 @@ function scoreMatches(matches){
                 against = matches.filter(match => {return match.allTeams == d[0].name + '-' + d[1].name 
                                                        || match.allTeams == d[1].name + '-' + d[0].name})
                 if(against[0].actualWinner == against[1].actualWinner){
-                    d.forEach(function(d){ if (d.name == against[0].actualWinner) d.advance = 'e'})
+                    d.forEach(function(d){ if (d.name != against[0].actualWinner) d.advance = 'e'})
                 }
             }
             if(advanceSlots == - 1){
